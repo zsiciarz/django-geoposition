@@ -93,6 +93,7 @@ if (jQuery != undefined) {
                 }, function(results, status) {
                     $addressRow.text('');
                     if (results && results[0]) {
+                        $container.trigger('geoposition.geocoder.finished', [results, status]);
                         $addressRow.text(results[0].formatted_address);
                     }
                 });
